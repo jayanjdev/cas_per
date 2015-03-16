@@ -1,5 +1,16 @@
 module CasPer
-  module ActAsCasPersister
-    
+  module ActsAsCasPersister
+    extend ActiveSupport::Concern 
+
+    included do
+    end
+            
+    module ClassMethods
+      def acts_as_cas_persister(options = {})
+        # your code will go here
+      end
+    end
   end
 end
+
+ActiveRecord::Base.send :include, CasPer::ActsAsCasPersister
